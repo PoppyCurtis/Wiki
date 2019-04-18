@@ -1,0 +1,28 @@
+{
+  "name": "wiki-api",
+  "version": "1.0.0",
+  "description": "Project designed to create own RESTful API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoppyCurtis/Wiki.git"
+  },
+  "keywords": [
+    "REST"
+  ],
+  "author": "Poppy Curtis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PoppyCurtis/Wiki/issues"
+  },
+  "homepage": "https://github.com/PoppyCurtis/Wiki#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.2"
+  }
+}
