@@ -48,7 +48,8 @@ app.post("/articles", function(req, res) {
         }
     });
 });
-/*app.delete("/articles", function(req, res) {
+
+app.delete("/articles", function(req, res) {
     Article.deleteMany(function(err, results) {
         if (!err) {
             res.send("Successfully deleted all articles");
@@ -57,7 +58,8 @@ app.post("/articles", function(req, res) {
             res.send(err);
         }
     });
-});*/
+});
+
 app.listen(3000, function(req, res) {
     console.log("Server running on Port 3000");
 });
