@@ -32,6 +32,32 @@ app.get("/articles", function(req, res) {
         }
     });
 });
+app.post("/articles", function(req, res) {
+    console.log();
+
+    const newArticle = new Article({
+        title: req.body.title,
+        content: req.body.content
+    });
+    newArticle.save(function(err) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            res.send("All OK");
+        }
+    });
+});
+/*app.delete("/articles", function(req, res) {
+    Article.deleteMany(function(err, results) {
+        if (!err) {
+            res.send("Successfully deleted all articles");
+        }
+        else {
+            res.send(err);
+        }
+    });
+});*/
 app.listen(3000, function(req, res) {
     console.log("Server running on Port 3000");
 });
