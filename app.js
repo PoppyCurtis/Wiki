@@ -94,7 +94,14 @@ app.route("/articles/:articletitle")
                 }
             })
     })
-//.delete();
+    .delete(function (req, res) {
+        Article.deleteOne({title: req.params.articletitle},
+            function(err) {
+                if (!err) {
+                    res.send("Successfully deleted");
+                }
+            })
+    });
 
 app.listen(3000, function (req, res) {
     console.log("Server running on Port 3000");
