@@ -77,13 +77,23 @@ app.route("/articles/:articletitle")
         Article.update(
             { title: req.params.articletitle },
             { title: req.body.title, content: req.body.content },
-            { overwrite: true }, 
+            { overwrite: true },
             function (err, results) {
-                if(!err) {
+                if (!err) {
                     res.send("Successfully changed");
                 }
             })
-    });
+    })
+    .patch(function (req, res) {
+        Article.update(
+            { title: req.params.articletitle },
+            { $set: req.body },
+            function (err) {
+                if (!err) {
+                    res.send("Successfully changed");
+                }
+            })
+    })
 //.delete();
 
 app.listen(3000, function (req, res) {
